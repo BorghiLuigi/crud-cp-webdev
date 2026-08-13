@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Jogadoras</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Cadastro de Jogadoras de Futebol Feminino</h1>
@@ -14,8 +16,8 @@
             <select id="filtroClube">
                 <option value="">Todos os clubes</option>
             </select>
-            <button id="ordenarNome"></button>
-            <button id="ordenarPosicao"></button>
+            <button id="ordenarNome">Ordenar por Nome</button>
+            <button id="ordenarPosicao">Ordenar por Posição</button>
             <button id="novaJogadora">Nova Jogadora</button>
         </div>
     </header>
@@ -24,16 +26,18 @@
         <div id="listaJogadoras" class="grid-cards"></div>
     </main>
 
+    <!-- Modal do Formulário -->
     <section id="formSection" class="modal oculto">
         <form id="formJogadora">
             <h2 id="tituloForm">Cadastrar Jogadora</h2>
-            <input type="text" id="nome" placeholder="Nome">
-            <input type="text" id="posicao" placeholder="Posição">
-            <input type="text" id="clube" placeholder="Clube">
-            <input type="text" id="foto" placeholder="URL da foto ou caminho local">
-            <input type="number" id="gols" placeholder="Gols" min="0">
-            <input type="number" id="assistencias" placeholder="Assistências" min="0">
-            <input type="number" id="jogos" placeholder="Jogos" min="0">
+            <input type="hidden" id="jogadoraId">
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="text" id="posicao" placeholder="Posição" required>
+            <input type="text" id="clube" placeholder="Clube" required>
+            <input type="text" id="foto" placeholder="Caminho da foto (ex: img/foto.jpg)" required>
+            <input type="number" id="gols" placeholder="Gols" min="0" required>
+            <input type="number" id="assistencias" placeholder="Assistências" min="0" required>
+            <input type="number" id="jogos" placeholder="Jogos" min="0" required>
             <button type="submit">Salvar</button>
             <button type="button" id="cancelar">Cancelar</button>
         </form>
@@ -41,4 +45,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>

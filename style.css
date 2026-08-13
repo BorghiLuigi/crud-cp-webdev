@@ -1,23 +1,3 @@
-:root {
-  --bg: #ffc57a;
-  --texto: #222222;
-  --muted: #555555;
-  --card: #ffffff;
-  --border: #e5e7eb;
-  --border-strong: #d0d7de;
-  --primary: #2f6feb;
-  --primary-hover: #255ad6;
-  --accent-warn: #fff8e1;  
-  --accent-warn-border: #f3d27a;
-  --accent-edit: #e7f0ff; 
-  --accent-edit-border: #b8d0ff;
-  --accent-del: #ffe7e7;
-  --accent-del-border: #ffbcbc;
-  --radius: 8px;
-  --shadow: 0 1px 2px rgba(72, 115, 225, 0.867);
-  --space: 12px;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,245 +5,172 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
-  color: var(--texto);
+  font-family: Arial, sans-serif;
+  background-color: #ffc57a;
+  /* Fundo laranja */
   padding: 20px;
 }
 
 header {
-  max-width: 1000px;
-  margin: 0 auto 16px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 header h1 {
-  font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #000;
 }
 
 .header_acoes {
-  display: grid;
-  grid-template-columns: 1fr repeat(3, max-content) max-content;
-  gap: 8px;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.header_acoes input[type="text"],
+.header_acoes input,
 .header_acoes select,
 .header_acoes button {
-  height: 38px;
-  padding: 0 10px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius);
-  font-size: 14px;
-  background: #ffffff;
-}
-
-.header_acoes input[type="text"] {
-  min-width: 240px;
-}
-
-.header_acoes select {
-  min-width: 150px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .header_acoes button {
+  background-color: #3b82f6;
+  /* Azul */
+  color: white;
+  border: none;
   cursor: pointer;
-  background: var(--primary);
-  color: #ffffff;
-  border: 1px solid #2a62cf;
 }
 
 .header_acoes button:hover {
-  background: var(--primary-hover);
+  background-color: #2563eb;
 }
 
-#ordenarNome::after {
-  content: 'Ordenar por Nome';
-}
-
-#ordenarPosicao::after {
-  content: 'Ordenar por Posição';
-}
-
-main {
-  max-width: 1000px;
+/* Grid dos Cards */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.grid-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space);
-}
-
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: white;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .card img {
   width: 100%;
-  height: auto;
-  max-height: 300px;    
-  object-fit: contain;  
-  display: block;
-  background: #fff;
+  height: 250px;
+  object-fit: cover;
 }
 
 .card-content {
-  padding: 10px;
+  padding: 15px;
+  flex-grow: 1;
 }
 
 .card-content h3 {
-  font-size: 16px;
-  color: var(--primary);
-  margin-bottom: 4px;
+  color: #2563eb;
+  margin-bottom: 5px;
 }
 
 .card-content p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 4px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .stats {
   display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-top: 6px;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 .stat-pill {
-  background: #f1f3f5;
-  border: 1px solid #e6e9ec;
+  background: #f1f1f1;
   padding: 2px 6px;
-  border-radius: 999px;
+  border-radius: 10px;
   font-size: 12px;
+  border: 1px solid #ddd;
 }
 
+/* Botões do Card */
 .card-acoes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  display: flex;
+  gap: 5px;
   padding: 10px;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #eee;
 }
 
 .card-acoes button {
-  height: 32px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius);
-  background: #ffffff;
+  flex: 1;
+  padding: 5px;
   cursor: pointer;
-  font-size: 13px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.btn-favorita {
-  background: var(--accent-warn);
-  border-color: var(--accent-warn-border);
+.card-acoes button:hover {
+  background: #f1f1f1;
 }
 
-.btn-editar {
-  background: var(--accent-edit);
-  border-color: var(--accent-edit-border);
-}
-
-.btn-excluir {
-  background: var(--accent-del);
-  border-color: var(--accent-del-border);
-}
-
+/* Modal do Formulário */
 .modal {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 16px;
+  align-items: center;
 }
 
-.modal.oculto {
+.oculto {
   display: none;
 }
 
 #formJogadora {
-  width: 100%;
-  max-width: 420px;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px;
-  display: grid;
-  gap: 8px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
 }
 
-#tituloForm {
+#formJogadora h2 {
   text-align: center;
-  font-size: 18px;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 
 #formJogadora input {
-  height: 36px;
-  padding: 0 10px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius);
-  font-size: 14px;
-}
-
-#formJogadora input:focus {
-  outline: 2px solid #bcd1ff;
-  border-color: var(--primary);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 #formJogadora button {
-  height: 38px;
-  border-radius: var(--radius);
-  border: 1px solid #2a62cf;
-  background: var(--primary);
-  color: #ffffff;
-  font-size: 14px;
+  padding: 10px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-#formJogadora button:hover {
-  background: var(--primary-hover);
-}
-
 #cancelar {
-  background: #6b7280;
-  border-color: #606770;
-}
-
-#cancelar:hover {
-  background: #565d64;
-}
-
-.header_acoes button:focus,
-#formJogadora button:focus {
-  outline: 2px solid #bcd1ff;
-  outline-offset: 2px;
-}
-
-@media (max-width: 560px) {
-  body {
-    padding: 16px;
-  }
-
-  .header_acoes {
-    grid-template-columns: 1fr;
-  }
-
-  .header_acoes input[type="text"],
-  .header_acoes select,
-  .header_acoes button {
-    width: 100%;
-  }
+  background-color: #ef4444 !important;
+  /* Vermelho */
 }
