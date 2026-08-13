@@ -10,7 +10,7 @@
     <header>
         <h1>Cadastro de Jogadoras de Futebol Feminino</h1>
         <div class="header_acoes">
-            <input type="text" id="busca" placeholder="Buscarpor nome ou posição">
+            <input type="text" id="busca" placeholder="Buscar por nome ou posição">
             <select id="filtroClube">
                 <option value="">Todos os clubes</option>
             </select>
@@ -19,28 +19,26 @@
             <button id="novaJogadora">Nova Jogadora</button>
         </div>
     </header>
-<!-- Final Header -->
- <main>
-<div id="listaJogadoras" class="grid-cards"></div>
-</main>
-<!-- Final Main -->
 
-<section id="formSection" class="modal oculto">
-<form id="formJogadora">
-    <h2 id="tituloForm">Cadastrar Jogadora</h2>
-    <input type="text" id="nome" placeholder="Nome">
-    <input type="text" id="posicao" placeholder="Posição">
-    <input type="text" id="clube" placeholder="Clube">
-    <input type="text" id="foto" placeholder="URL da foto ou caminho local">
-    <input type="number" id="gols" placeholder="Gols" min="0">
-    <input type="number" id="assistencias" placeholder="Assistências" min="0">
-    <input type="number" id="jogos" placeholder="Jogos" min="0">
-    <button type="submit">Salvar</button>
-    <button type="button" id="cancelar">Cancelar</button>
-</form>
-</section>
-<script src="app.js"></script>
+    <main>
+        <div id="listaJogadoras" class="grid-cards"></div>
+    </main>
 
-<!-- Final Body -->
+    <section id="formSection" class="modal oculto">
+        <form id="formJogadora">
+            <h2 id="tituloForm">Cadastrar Jogadora</h2>
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="text" id="posicao" placeholder="Posição">
+            <input type="text" id="clube" placeholder="Clube">
+            <input type="text" id="foto" placeholder="URL da foto ou caminho local">
+            <input type="number" id="gols" placeholder="Gols" min="0">
+            <input type="number" id="assistencias" placeholder="Assistências" min="0">
+            <input type="number" id="jogos" placeholder="Jogos" min="0">
+            <button type="submit">Salvar</button>
+            <button type="button" id="cancelar">Cancelar</button>
+        </form>
+    </section>
+
+    <script src="app.js"></script>
 </body>
 </html>
